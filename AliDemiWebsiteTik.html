@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gjimnazi Ali Demi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --gold: #c9a84c;
+      --cream: #f8f4ee;
+      --text: #2c2c2c;
+      --muted: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul li a {
+      color: #ccd6f6;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    nav ul li a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 70px;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: white;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: #aab4cc;
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* STATS */
+    .stats {
+      background: var(--gold);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+      padding: 26px 44px;
+      border-right: 1px solid rgba(0,0,0,0.12);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+    section { padding: 65px 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 660px;
+    }
+
+    /* ABOUT */
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-size: 0.97rem;
+      max-width: 720px;
+    }
+
+    @media(max-width: 680px) {
+      nav ul { gap: 14px; }
+      .hero h1 { font-size: 2rem; }
+      .stat { padding: 20px 24px; }
+    }
+
+    /* DEGET */
+    .deget-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .dega-card {
+      background: white;
+      border: 1px solid #e5e0d8;
+      border-radius: 8px;
+      padding: 26px 20px;
+      text-align: center;
+    }
+    .dega-card:hover {
+      box-shadow: 0 6px 24px rgba(13,31,60,0.12);
+      transform: translateY(-3px);
+      transition: all 0.2s;
+    }
+    .dega-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .dega-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* KONTAKT */
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 36px;
+    }
+    @media(max-width: 640px) { .kontakt-grid { grid-template-columns: 1fr; } }
+    .info-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+    .info-icon {
+      background: var(--navy);
+      color: var(--gold);
+      width: 40px; height: 40px;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .info-item h4 {
+      font-size: 0.75rem; color: var(--muted);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .info-item p { font-size: 0.93rem; color: var(--text); font-weight: 600; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block; font-size: 0.8rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 5px;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: 10px 13px;
+      border: 1px solid #d5cec4; border-radius: 4px;
+      font-family: inherit; font-size: 0.93rem;
+      background: white; color: var(--text);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--gold); }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .btn-submit {
+      background: var(--navy); color: white;
+      border: none; padding: 12px 30px;
+      border-radius: 4px; font-family: inherit;
+      font-size: 0.93rem; font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-submit:hover { background: var(--gold); color: var(--navy); }
+
+    /* FOOTER */
+    footer {
+      background: #07111f; color: #6b7a99;
+      text-align: center; padding: 28px 20px;
+      font-size: 0.84rem;
+    }
+    footer span { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Gjimnazi Ali Demi</div>
+  <ul>
+    <li><a href="#rreth">Rreth Nesh</a></li>
+    <li><a href="#deget">Deget</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Vlore, Shqiperi</div>
+  <h1>Gjimnazi <span>Ali Demi</span></h1>
+  <p>Formojme brezat e ardhshem me dije, vlera dhe ambicie. Shkolla ku cdo nxenes e gjen rrugën e vet.</p>
+  <div class="hero-btns">
+    <a href="#deget" class="btn-primary">Zbulo Deget</a>
+    <a href="#kontakt" class="btn-outline">Na Kontakto</a>
+  </div>
+</header>
+
+
+
+<!-- RRETH NESH -->
+<section id="rreth">
+  <div class="container">
+    <div class="section-label">Historia</div>
+    <h2>Rreth Shkolles</h2>
+    <div class="about-text">
+      <p>Gjimnazi "Ali Demi" eshte nje nga shkollat me tradite te gjate ne Vlore. E themeluar dekada me pare, shkolla ka formuar mijera nxenes te cilet sot jane pjese e shoqerise shqiptare dhe boterore.</p>
+      <p>Misioni yne eshte te ofrojme nje arsim cilesore qe pergatit nxenesit jo vetem akademikisht, por edhe si qytetare te pergjegjeshem me vlera te forta.</p>
+      <p>Gjimnazi ofron mjedis modern mesimor, laboratore te pajisur dhe staf pedagogjik te kualifikuar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEGET -->
+<section id="deget" style="background: white;">
+  <div class="container">
+    <div class="section-label">Programet</div>
+    <h2>Deget Tona</h2>
+    <p class="lead">Ofrojme dega te ndryshme qe i pershtaten interesave dhe talenteve te cdo nxenesi.</p>
+    <div class="deget-grid">
+      <div class="dega-card">
+        <h3>Shkenca Natyrore</h3>
+        <p>Fizike, Kimi, Biologji dhe Matematike e avancuar. Ideal per nxenesit qe synojne mjekesine ose inxhinierine.</p>
+      </div>
+      <div class="dega-card">
+        <h3>Gjuhe dhe Letersi</h3>
+        <p>Letersi shqipe dhe boterore, gjuhe te huaja, komunikim dhe shkencat shoqerore.</p>
+      </div>
+      <div class="dega-card">
+        <h3>Teknologji dhe IT</h3>
+        <p>Informatike, programim dhe teknologji informacioni. Pergatit nxenesit per boten dixhitale.</p>
+      </div>
+      <div class="dega-card">
+        <h3>Matematike dhe Fizike</h3>
+        <p>Matematike e thelluar dhe fizike, e orientuar drejt studimeve teknike universitare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="container">
+    <div class="section-label">Na Gjeni</div>
+    <h2>Kontakt</h2>
+    <div class="kontakt-grid">
+      <div>
+        <div class="info-item">
+          <div class="info-icon">&#128205;</div>
+          <div><h4>Adresa</h4><p>Rruga Ali Demi, Vlore, Shqiperi</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128222;</div>
+          <div><h4>Telefon</h4><p><a href="tel:033421321" style="color: var(--text); text-decoration: none; font-weight: 600;">033 421 321</a></p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#9993;</div>
+          <div><h4>Email</h4><p><a href="mailto:gjimnazialidemi1947@gmail.com" style="color: var(--text); text-decoration: none; font-weight: 600;">gjimnazialidemi1947@gmail.com</a></p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128172;</div>
+          <div><h4>Messenger</h4><p><a href="https://m.me/Gjimnazi.AliDemi.Vlore" target="_blank" style="color: var(--text); text-decoration: none; font-weight: 600;">Gjimnazi "Ali Demi" Vlore</a></p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128336;</div>
+          <div><h4>Orari</h4><p>E Hene - E Premte: 8:00 - 14:00</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>Emri</label>
+          <input type="text" placeholder="Emri juaj" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="email@shembull.com" />
+        </div>
+        <div class="form-group">
+          <label>Mesazhi</label>
+          <textarea placeholder="Shkruani mesazhin tuaj..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="
+          var emri = this.closest('div').querySelector('input[type=text]').value;
+          var email = this.closest('div').querySelector('input[type=email]').value;
+          var mesazhi = this.closest('div').querySelector('textarea').value;
+          if(!emri || !mesazhi){ alert('Ju lutem plotesoni emrin dhe mesazhin.'); return; }
+          var subject = encodeURIComponent('Mesazh nga ' + emri);
+          var body = encodeURIComponent('Emri: ' + emri + '\nEmail: ' + email + '\n\nMesazhi:\n' + mesazhi);
+          window.location.href = 'mailto:gjimnazialidemi1947@gmail.com?subject=' + subject + '&body=' + body;
+        ">Dergo Mesazhin</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 <span>Gjimnazi Ali Demi</span> &middot; Vlore, Shqiperi &middot; Te gjitha te drejtat e rezervuara.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
